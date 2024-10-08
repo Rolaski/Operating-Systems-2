@@ -1,0 +1,102 @@
+1. Ile razy należy przesunąć ramkę w prawo, aby wyznaczyć wartość n-tego wyrazu ciągu Fibonacciego w funkcji fibo3 dla n >= 2?
+Dla n-tego wyrazu ciągu Fibonacciego, przesuwamy ramkę n - 1 razy.
+dla n = 2 -> przesunięcie o 1 raz
+dla n = 3 -> przesunięcie o 2 razy
+dla n = 4 -> przesunięcie o 3 razy
+
+===============================================================================================
+
+2. Analiza wywołania fibo3(4)
+Funkcja fibo3 działa na zasadzie dynamicznego programowania, gdzie zaczynamy od wartości 1 i 1 dla pierwszych dwóch wyrazów ciągu Fibonacciego, a następnie przesuwamy „ramkę” zgodnie z regułą:
+
+pom = r0
+r0 = r1
+r1 = r0 + pom
+Działanie fibo3(4):
+Na początku mamy:
+r0 = 1, r1 = 1
+
+Pierwsze przesunięcie:
+pom = r0 = 1,
+r0 = r1 = 1,
+r1 = r0 + pom = 1 + 1 = 2
+
+Drugie przesunięcie:
+pom = r0 = 1,
+r0 = r1 = 2,
+r1 = r0 + pom = 2 + 1 = 3
+
+Trzecie przesunięcie:
+pom = r0 = 2,
+r0 = r1 = 3,
+r1 = r0 + pom = 3 + 2 = 5
+
+Po trzech przesunięciach ramki uzyskujemy wartość dla fibo3(4) = 5.
+
+===============================================================================================
+
+3. Graf obliczeń dla fibo3(4)
+Na początku:
+------------------------------------
+|  Indeks   |  0  |  1  |  2  |  3  |  4  |
+------------------------------------
+|  Wartość  |  1  |  1  |  2  |  3  |  5  |
+------------------------------------
+|  r0       |  1  |     |     |     |     |
+|  r1       |  1  |     |     |     |     |
+|  pom      |     |     |     |     |     |
+------------------------------------
+
+Krok 1:
+------------------------------------
+|  Indeks   |  0  |  1  |  2  |  3  |  4  |
+------------------------------------
+|  Wartość  |  1  |  1  |  2  |  3  |  5  |
+------------------------------------
+|  r0       |  1  |  1  |     |     |     |
+|  r1       |  1  |  2  |     |     |     |
+|  pom      |     |  1  |     |     |     |
+------------------------------------
+
+Krok 2:
+------------------------------------
+|  Indeks   |  0  |  1  |  2  |  3  |  4  |
+------------------------------------
+|  Wartość  |  1  |  1  |  2  |  3  |  5  |
+------------------------------------
+|  r0       |  1  |  2  |     |     |     |
+|  r1       |  1  |  2  |  3  |     |     |
+|  pom      |     |  1  |  2  |     |     |
+------------------------------------
+
+Krok 3:
+------------------------------------
+|  Indeks   |  0  |  1  |  2  |  3  |  4  |
+------------------------------------
+|  Wartość  |  1  |  1  |  2  |  3  |  5  |
+------------------------------------
+|  r0       |  1  |  2  |  3  |     |     |
+|  r1       |  1  |  2  |  3  |  5  |     |
+|  pom      |     |  1  |  2  |  3  |     |
+------------------------------------
+
+Wynik:
+------------------------------------
+|  Indeks   |  0  |  1  |  2  |  3  |  4  |
+------------------------------------
+|  Wartość  |  1  |  1  |  2  |  3  |  5  |
+------------------------------------
+|  r0       |  3  |     |     |     |     |
+|  r1       |  5  |     |     |     |     |
+|  pom      |  2  |     |     |     |     |
+------------------------------------
+
+===============================================================================================
+
+4. Która funkcja ma mniejszą złożoność obliczeniową: fibo2 czy fibo3?
+fibo2 – jest funkcją rekurencyjną, która oblicza wartość każdego wyrazu ciągu Fibonacciego przez wywołanie dwóch kolejnych wartości Fibonacciego. Jej złożoność obliczeniowa wynosi O(2^n), ponieważ dla każdego n wywoływane są dwa kolejne wyrazy, co prowadzi do wykładniczej liczby wywołań.
+
+fibo3 – jest funkcją iteracyjną z dynamicznym programowaniem, która działa w czasie O(n), ponieważ przelicza wartości tylko raz, przesuwając „ramkę” n-1 razy.
+
+A więc:
+fibo3 ma znacznie mniejszą złożoność obliczeniową niż fibo2, ponieważ działa liniowo, podczas gdy fibo2 ma złożoność wykładniczą.
