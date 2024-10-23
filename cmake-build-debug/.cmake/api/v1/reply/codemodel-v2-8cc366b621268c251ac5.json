@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Operating_Systems_2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Operating_Systems_2-Debug-a023b6962e429d9bcee7.json",
+					"jsonFile" : "target-Operating_Systems_2-Debug-24c5c6808cdf20af1ee0.json",
 					"name" : "Operating_Systems_2",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Github/Operating-Systems-2/cmake-build-debug",
-		"source" : "D:/Github/Operating-Systems-2"
+		"build" : "D:/Github things/Operating-Systems-2/cmake-build-debug",
+		"source" : "D:/Github things/Operating-Systems-2"
 	},
 	"version" : 
 	{
